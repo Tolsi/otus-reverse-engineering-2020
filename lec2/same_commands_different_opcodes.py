@@ -1,7 +1,4 @@
 #!/usr/bin/env python3
-# Sample code for X86 of Unicorn. Nguyen Anh Quynh <aquynh@gmail.com>
-import json
-
 from capstone import *
 
 if __name__ == '__main__':
