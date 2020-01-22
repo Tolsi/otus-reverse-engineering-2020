@@ -119,12 +119,11 @@ def doIt():
         return
 
     usernameValue = processUsername(username)
-    for i in range(1, 10):
-        for attempt in bruteforce(string.digits + string.ascii_letters, i):
-            keyValue = processKey(attempt)
-            if keyValue == usernameValue:
-                print('Key: ' + attempt)
-                return
+    for attempt in bruteforce(string.digits + string.ascii_letters, 10):
+        keyValue = processKey(attempt)
+        if keyValue == usernameValue:
+            print('Key: ' + attempt)
+            return
 
 if __name__ == '__main__':
     doIt()

@@ -72,14 +72,10 @@ def doIt():
         return
 
     usernameValue = processUsername(username)
-    for i in range(1, 10):
-        maxKey = processKey('z' * i)
-        minKey = processKey('0' * i)
-        if minKey < usernameValue and maxKey > usernameValue:
-            for attempt in bruteforce(string.digits, i):
-                if processKey(attempt) == usernameValue:
-                    print('Key: ' + attempt)
-                    return
+    for attempt in bruteforce(string.digits, 10):
+        if processKey(attempt) == usernameValue:
+            print('Key: ' + attempt)
+            return
 
 if __name__ == '__main__':
     doIt()
