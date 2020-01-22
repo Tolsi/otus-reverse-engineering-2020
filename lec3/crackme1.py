@@ -35,6 +35,8 @@ def processUsername(username):
     username = list(username.upper())
     total = 0
     for i in range(0, len(username)):
+        if (username[i] >= 'Z'):
+            username[i] = chr(ord(username[i]) - 0x20)
         total = total + ord(username[i])
     return total ^ 0x5678
 
